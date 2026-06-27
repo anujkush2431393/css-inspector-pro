@@ -1,27 +1,89 @@
 # CSS Inspector Pro
 
-A professional, production-quality Chrome Extension to inspect, analyze, and extract CSS, Tailwind classes, and accessibility scores from any webpage element.
+ A professional Chrome Extension for inspecting, analyzing, and extracting CSS, Tailwind classes, and accessibility data from any webpage element 
 
-![CSS Inspector Pro](https://via.placeholder.com/800x400?text=CSS+Inspector+Pro+Screenshot)
 
-## Features
 
-- **Inspect Mode:** Hover over any element to see a DevTools-like box model overlay (Margin, Padding, Border, Content).
-- **CSS Inspector:** Extracts typography, colors, layout, box model, flex, and grid properties.
-- **Tailwind Suggestions:** Automatically converts computed CSS properties into approximate Tailwind CSS utility classes.
-- **Color Converter:** Live previews and converts colors between HEX, RGB, and HSL formats.
-- **Accessibility Checker:** Audits elements for missing `alt` tags, `aria-labels`, contrast heuristics, and basic semantic structure, generating a score out of 100.
-- **DOM Inspector:** Displays the element tag, ID, classes, parent node, and child count.
-- **Export Data:** Download inspection results as JSON, TXT, or Markdown.
-- **Copy Utilities:** One-click copy for CSS blocks and Tailwind classes.
-- **Searchable Properties:** Instantly filter CSS properties using the built-in search.
-- **Glassmorphism UI:** A sleek, modern, dark-themed professional developer interface.
+
 
 ---
 
-## Folder Structure
+## Overview
 
-```text
+CSS Inspector Pro brings a DevTools-grade inspection experience directly into a sleek, floating panel — no tab switching, no context loss. Hover over any element, click to lock it, and instantly get computed CSS, Tailwind equivalents, accessibility audit scores, and DOM structure information, all in one place.
+
+Whether you're reverse-engineering a design, auditing a UI for accessibility, or extracting styles to replicate in your own project, CSS Inspector Pro saves time and eliminates guesswork.
+
+---
+
+## Features
+
+### Inspect Mode
+Hover over any element to see a live box model overlay displaying Margin, Padding, Border, and Content regions — identical to the Chrome DevTools layout view.
+
+### CSS Inspector
+Extracts and groups computed CSS properties across six categories: **Typography**, **Colors**, **Layout**, **Box Model**, **Flexbox**, and **Grid**. A built-in search bar lets you instantly filter to the property you need.
+
+### Tailwind Suggestions
+Automatically converts computed CSS values into the closest matching Tailwind CSS utility classes. Copy the entire class list with one click.
+
+### Color Converter
+Displays live previews of any color found on the element and converts between **HEX**, **RGB**, and **HSL** formats instantly.
+
+### Accessibility Checker
+Audits the selected element and its subtree for:
+- Missing `alt` attributes on images
+- Missing `aria-label` or `aria-labelledby` on interactive elements
+- Contrast ratio heuristics
+- Semantic structure validation
+
+Generates a score out of 100 with a breakdown of issues found.
+
+### DOM Inspector
+Displays the element's tag name, `id`, `class` list, parent node, and child element count — useful for understanding context within the DOM tree.
+
+### Export & Copy
+Export your full inspection results as **JSON**, **TXT**, or **Markdown**. One-click copy is available for both raw CSS blocks and Tailwind class strings.
+
+---
+
+## Installation
+
+> Requires Google Chrome (or any Chromium-based browser supporting Manifest V3).
+
+1. Clone or download this repository:
+   ```bash
+   git clone https://github.com/anujkush2431393/css-inspector-pro.git
+   ```
+2. Open Chrome and go to `chrome://extensions/`.
+3. Enable **Developer mode** using the toggle in the top-right corner.
+4. Click **Load unpacked** and select the `css-inspector-pro/` directory.
+5. Pin the extension to your toolbar for quick access.
+
+---
+
+## Usage
+
+1. Click the **CSS Inspector Pro** icon in your Chrome toolbar to open the panel.
+2. Click **Start Inspecting** to activate hover mode.
+3. Move your cursor over any element on the page — the overlay highlights the box model in real time.
+4. **Click** an element to lock the inspection and load its data into the panel.
+5. Browse the four tabs:
+
+| Tab | Contents |
+|-----|----------|
+| **CSS** | Grouped computed styles with search and copy |
+| **Tailwind** | Generated utility classes with one-click copy |
+| **A11y** | Accessibility score and detailed issue list |
+| **DOM** | Tag, ID, classes, parent, and child count |
+
+6. Use the **Export** buttons at the bottom to save your findings as JSON, TXT, or Markdown.
+
+---
+
+## Project Structure
+
+```
 css-inspector-pro/
 ├── manifest.json
 ├── popup/
@@ -48,52 +110,4 @@ css-inspector-pro/
 └── README.md
 ```
 
----
 
-## Installation
-
-1. Clone or download this repository.
-2. Open Google Chrome and navigate to `chrome://extensions/`.
-3. Enable **Developer mode** using the toggle switch in the top right corner.
-4. Click on **Load unpacked** and select the `css-inspector-pro` directory.
-5. Pin the extension to your toolbar for easy access.
-
----
-
-## Usage
-
-1. Click the **CSS Inspector Pro** icon in your Chrome toolbar.
-2. Click **Start Inspecting**.
-3. Move your mouse over elements on the current webpage to see the highlight overlay.
-4. **Click** an element to lock the inspection and extract its data.
-5. View the results in the popup panel across four tabs:
-   - **CSS**: View and copy computed styles.
-   - **Tailwind**: View and copy generated Tailwind utility classes.
-   - **A11y**: Review the accessibility score and any issues found.
-   - **DOM**: View structural information about the element.
-6. Use the **Export** buttons at the bottom to save your findings.
-
----
-
-## Permissions
-
-The extension requires the following permissions in `manifest.json`:
-
-- `activeTab`: Required to interact with the currently active webpage when the user clicks the extension action.
-- `scripting`: Required to inject the content scripts, utility classes, and overlay CSS dynamically into the active page.
-- `storage`: Reserved for future improvements (e.g., saving user preferences like theme or default export format).
-
----
-
-## Future Improvements
-
-- Full color contrast ratio calculations based on WCAG formulas.
-- Deep integration with framework-specific syntax (e.g., React `className`, Vue `:class`).
-- Customizable Tailwind config parsing to match project-specific design systems.
-- Keyboard navigation within the DOM tree (Arrow keys to traverse parent/child elements).
-
----
-
-## License
-
-MIT License. See `LICENSE` for more information.
