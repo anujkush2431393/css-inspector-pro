@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "CSS Inspector Pro",
+  "version": "1.0.0",
+  "description": "A professional Chrome Extension to inspect, analyze, and extract CSS, Tailwind classes, and accessibility scores.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "CSS Inspector Pro",
+    "default_icon": {
+      "16": "assets/icon16.png",
+      "48": "assets/icon48.png",
+      "128": "assets/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background/background.js",
+    "type": "module"
+  },
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  }
+}

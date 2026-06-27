@@ -1,0 +1,6 @@
+{
+  "name": "CSS Inspector Pro",
+  "description": "A professional Chrome Extension to inspect, analyze, and extract CSS, Tailwind classes, and accessibility scores.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
